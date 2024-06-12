@@ -77,7 +77,7 @@ const Search = () => {
                             }}
                         >
                             <img src={country.flags.png} alt={`Flag of ${country.name.common}`} style={{ width: "100px", height: "100px" }} />
-                            <h3>{country.name.common}</h3>
+                            <h2>{country.name.common}</h2>
                         </div>  
                     ))  
                 ) : (
