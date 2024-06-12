@@ -44,6 +44,7 @@ const Search = () => {
                     <Toolbar>
                         
                             <input
+                            type="text"
                             placeholder="Search for countries"
                             value={searchCountry}
                             onChange={(e) => setSearchCountry(e.target.value)}
