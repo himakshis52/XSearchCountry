@@ -42,16 +42,14 @@ const Search = () => {
             <Box sx={{ flexGrow: 1 }}>
                 <AppBar position="static" style={{background: "white", alignItems: "center" }}>
                     <Toolbar>
-                        
-                            <input
+                        <input
                             type="text"
                             placeholder="Search for countries"
                             value={searchCountry}
                             onChange={(e) => setSearchCountry(e.target.value)}
                             inputProps={{ 'aria-label': 'search' }}
-                            style={{ width: "60vw" }}
-                            />
-                        
+                            style={{ width: "60vw", padding: "10px", fontSize: "16px" }}
+                        />
                     </Toolbar>
                 </AppBar>
             </Box>
@@ -60,31 +58,32 @@ const Search = () => {
                 flexWrap: "wrap",
                 justifyContent: "center",
                 alignItems: "center",
-                height: "100vh"
+                padding: "20px",
             }}>
-                { filterCountries.length > 0 ?
-                        (filterCountries.map((country)=>(
+                { filterCountries.length > 0 ? (
+                    filterCountries.map((country) => (
                         <div
                             key={country.name.common} 
+                            className="countryCard"
                             style={{
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            flexDirection: "column",
-                            padding: "10px",
-                            margin: "10px",
-                            border: "1px solid black",
-                            borderRadius: "8px"
-                        }}>
-                            <img src={country.flags.png} alt= {`Flag of ${country.name.common}`} style={{ width: "100px", height: "100px" }} />
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                                flexDirection: "column",
+                                padding: "10px",
+                                margin: "10px",
+                                border: "1px solid black",
+                                borderRadius: "8px"
+                            }}
+                        >
+                            <img src={country.flags.png} alt={`Flag of ${country.name.common}`} style={{ width: "100px", height: "100px" }} />
                             <h3>{country.name.common}</h3>
                         </div>  
-                        ))  
-                    ) : (
-                        <p>No countries found....</p>
-                    )    
+                    ))  
+                ) : (
+                    <p>No countries found...</p>
+                )    
                 }
-                
             </div>
         </>
    
